@@ -26,4 +26,5 @@ class D : private A    // 'private' is default for classes
 {
     // x is private
     // y is private
-    // z is not accessib
+    // z is not accessible from D
+};
