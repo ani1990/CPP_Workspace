@@ -37,7 +37,7 @@ A private member variable or function cannot be accessed, or even viewed from ou
 A protected member variable or function is very similar to a private member but it provided one additional benefit that they can be accessed in child classes which are called derived classes.
     
 ########################################################################################################################################################
-    
+######################################################################################################################################################## 
 Public: All the class members declared under public will be available to everyone. The data members and member functions declared public can be accessed by other classes too. The public members of a class can be accessed from anywhere in the program using the direct member access operator (.) with the object of that class.
 
     // C++ program to demonstrate public 
@@ -77,9 +77,11 @@ Radius is:5.5
 Area is:94.985
 In the above program the data member radius is public so we are allowed to access it outside the class.
     
-    ########################################################################################################################################################
-    
-    Private: The class members declared as private can be accessed only by the functions inside the class. They are not allowed to be accessed directly by any object or function outside the class. Only the member functions or the friend functions are allowed to access the private data members of a class.
+########################################################################################################################################################
+########################################################################################################################################################    
+
+Private: The class members declared as private can be accessed only by the functions inside the class. They are not allowed to be accessed directly by any object or function outside the class. Only the member functions or the friend functions are allowed to access the private data members of a class.
+
 Example:
 // C++ program to demonstrate private 
 // access modifier 
@@ -173,7 +175,7 @@ Output:
 Radius is:1.5
 Area is: 7.065
 ########################################################################################################################################################
-
+########################################################################################################################################################
     
 Protected: Protected access modifier is similar to that of private access modifiers, the difference is that the class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
 // C++ program to demonstrate 
