@@ -40,7 +40,7 @@ A protected member variable or function is very similar to a private member but 
 that they can be accessed in child classes which are called derived classes.
     
 #######################################################################################
-
+                                        PUBLIC
 #######################################################################################
 Public: All the class members declared under public will be available to everyone.
     The data members and member functions declared public can be accessed by other classes too.
@@ -85,7 +85,7 @@ Area is:94.985
 In the above program the data member radius is public so we are allowed to access it outside the class.
     
 #######################################################################################
-    
+                                  PRIVATE
 ######################################################################################
         
 
@@ -189,7 +189,7 @@ Output:
 Radius is:1.5
 Area is: 7.065
 #######################################################################################
-    
+                                      PROTECTED
 #######################################################################################
     
     
