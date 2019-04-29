@@ -147,3 +147,28 @@ Output:
 
 A's x is 10
 B's x is 20
+
+#########################################################################
+   5
+#########################################################################   
+You can also use the class scope operator to qualify class names or class member names.
+If a class member name is hidden, you can use it by qualifying it with its class name and the class scope operator.
+
+In the following example, the declaration of the variable X hides the class type X,
+but you can still use the static class member count by qualifying it with the class type X and the scope resolution operator.
+   
+ #include <iostream>
+using namespace std;
+
+class X
+{
+public:
+      static int count;
+};
+int X::count = 10;                // define static data member
+
+int main ()
+{
+      int X = 0;                  // hides class type X
+      cout << X::count << endl;   // use static member of class X
+}  
