@@ -1,0 +1,65 @@
+The identifier used for a namespace name should be unique. It should not be used previously as a global identifier.
+namespace Raymond {
+  // namespace body here...
+  }Copy
+In this example, Raymond is the identifier of the namespace.
+If you intend to access a namespace's elements, the namespace's identifier must be known in all translation units.
+
+
+////////////////////////////Alias for namespace///////////////////////////////////////
+namespace INTERNATIONAL_BUSINESS_MACHINES {
+  void f();
+}
+
+namespace IBM = INTERNATIONAL_BUSINESS_MACHINES;
+
+In this example, the IBM identifier is an alias for INTERNATIONAL_BUSINESS_MACHINES.
+ This is useful for referring to long namespace identifiers.
+
+If a namespace name or alias is declared as the name of any other entity in the same declarative region,
+a compile-time error will result. Also, if a namespace name defined at global scope is declared 
+as the name of any other entity in any global scope of the program, a compile-time error will result.
+
+
+//////////////////////////Nested NMSPC Alias/////////////////////////////
+Namespace definitions hold declarations. Since a namespace definition is a declaration itself, namespace definitions can be nested.
+
+An alias can also be applied to a nested namespace.
+namespace INTERNATIONAL_BUSINESS_MACHINES {
+  int j;
+    namespace NESTED_IBM_PRODUCT {
+      void a() { j++; }
+      int j;
+      void b() { j++; }
+  }
+}
+namespace NIBM = INTERNATIONAL_BUSINESS_MACHINES::NESTED_IBM_PRODUCT
+
+In this example, the NIBM identifier is an alias for the namespace NESTED_IBM_PRODUCT.
+ This namespace is nested within the INTERNATIONAL_BUSINESS_MACHINES namespace.
+
+///////////////////////////////////////////////////////////////////////
+Namespaces are extensible. You can add subsequent declarations to a previously defined namespace.
+ Extensions may appear in files separate from or attached to the original namespace definition.
+
+For example:
+namespace X { // namespace definition
+  int a;
+  int b;
+  }
+
+namespace X { // namespace extension
+  int c;
+  int d;
+  }
+
+namespace Y { // equivalent to namespace X
+  int a;
+  int b;
+  int c;
+  int d;
+  }
+
+In this example, namespace X is defined with a and b and later extended with c and d.
+ namespace X now contains all four members. You may also declare all of the required members within one namespace.
+ This method is represented by namespace Y. This namespace contains a, b, c, and d.
