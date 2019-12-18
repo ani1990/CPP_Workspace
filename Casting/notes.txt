@@ -1,0 +1,9 @@
+C++ is strict about converting from one type to another - much stricter than C is. You can use C-style casting but it's not recommended. Try to use the least dangerous (most specific) casting alternative from those below
+
+const_cast - used to remove the const qualifier.
+dynamic_cast - does careful, type-sensitive casting at run time. Returns 0 (or throws in the case of exceptions) when the conversion is not safe.
+reinterpret_cast - produces something that has the same bit pattern as the original.
+static_cast - doesn't examine the object it casts from at run time. This is fast if it's safe and - the compiler should tell you if it isn't safe. It lets you force a conversion that is already defined, or do a conversion from A to B where B to A is already defined. Can deal with void*.
+For example, to convert from a const void * to a File_entry** (a common kind of thing to do in C) you need to do
+
+File_entry**fe2= reinterpret_cast<File_entry**>(const_cast<void*>(entry2));
