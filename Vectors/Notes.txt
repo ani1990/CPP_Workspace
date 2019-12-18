@@ -17,3 +17,50 @@ int main() {
     v[i]=i;
   cout << count_if(v.begin(), v.end(),multipleOf3) << " multiples" << endl;
 }
+
+
+
+////////////////////////////////////////////////////////////////////////
+*transform - like a "for" loop; you can change the container's values
+    int square(int n) {
+       return  n*n;
+    }
+
+    int main() {
+    vector<int> v;
+    ...
+    // replace each value in v by its square
+    transform(v.begin(), v.end(), square);
+    }
+/////////////////////////////////////////////////////////////////////////
+*replace - replaces values
+  vector<int> v;
+    ...
+  // replace 7s by 3s
+  replace(v.begin(), v.end(), 7,3);
+/////////////////////////////////////////////////////////////////////////
+
+///////////////////////////vector of classes/////////////////////////////
+#include <iostream>
+#include <vector>
+using namespace std;
+class student {
+public:
+  string crsid;
+  string surname;
+  void introduce() { cout << "Hello, I'm "  << surname  << endl;};
+  };
+
+class ugrad: public student  {
+public:
+  string directorOfStudies;  
+  };
+
+int main() {
+vector<ugrad> ugrads(3);
+ ugrads[0].crsid="cgf11"; ugrads[0].surname="Floyd";  ugrads[0].directorOfStudies="Alder";
+ ugrads[1].crsid="ogc71"; ugrads[1].surname="Carter"; ugrads[1].directorOfStudies="Alder";
+ ugrads[2].crsid="cgt77"; ugrads[2].surname="Taylor"; ugrads[2].directorOfStudies="Brown";
+
+ sort(ugrads.begin(), ugrads.end());
+}

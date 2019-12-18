@@ -1,0 +1,55 @@
+template < class Key,                                     // multimap::key_type
+           class T,                                       // multimap::mapped_type
+           class Compare = less<Key>,                     // multimap::key_compare
+           class Alloc = allocator<pair<const Key,T> >    // multimap::allocator_type
+           > class multimap;
+
+
+Multiple-key map
+Multimaps are associative containers that store elements formed by a combination of a key value and a mapped value, following a specific order, and where multiple elements can have equivalent keys.
+
+In a multimap, the key values are generally used to sort and uniquely identify the elements, while the mapped values store the content associated to this key. The types of key and mapped value may differ, and are grouped together in member type value_type, which is a pair type combining both:
+
+ 
+typedef pair<const Key, T> value_type;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Container properties
+
+Associative
+Elements in associative containers are referenced by their key and not by their absolute position in the container.
+
+Ordered
+The elements in the container follow a strict order at all times. All inserted elements are given a position in this order.
+
+Map
+Each element associates a key to a mapped value: Keys are meant to identify the elements whose main content is the mapped value.
+
+Multiple equivalent keys
+Multiple elements in the container can have equivalent keys.
+
+Allocator-aware
+The container uses an allocator object to dynamically handle its storage needs.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+Here's a little multimap example. Note that you need to add the elements in a different way - you need to use pair to create pairs of values to add to the mapping.
+
+
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+int main ()
+{
+  multimap<string,string> car;
+
+  car.insert(pair<string,string>("Smith","Ford"));
+  car.insert(pair<string,string>("Jones","Jaguar"));
+  car.insert(pair<string,string>("Smith", "Nissan"));
+  cout << "Smith has " << car.count("Smith") << " cars" <<  endl;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////
+

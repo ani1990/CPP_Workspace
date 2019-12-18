@@ -1,0 +1,9 @@
+Namespaces:
+
+Namespaces are like classes that have no functionality. They're a way of controlling scope. You can put an entity into a namespace by doing something like
+
+namespace test {
+ int i;
+}
+then using test::i to access the variable. The command "using namespace test" will make all the entities in the namespace available for the rest of the unit that the statement is in, without the "test::" being necessary.
+With newer compilers standard library functions are in the std namespace. It's tempting to put "using namespace std" at the top of each file to access all the standard routines, but this "pollutes the global namespace" with many routine names you'll never use, so consider using more specific commands like "using std:string"
