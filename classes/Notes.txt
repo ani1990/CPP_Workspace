@@ -1,0 +1,19 @@
+3.2 Class member privacy:
+
+Class members can have 3 types of privacy
+
+private - can be used only by member functions and friends
+
+protected - like private except that derived classes have access to them too. Try
+not to use this - it can help performance but it breaks encapsulation.
+
+public - available to any function.
+
+
+By default class members are private. 
+
+You often want the data to be private (so that they can’t be tampered with from the outside) but the functions public (so
+that they can be called by other objects). If you want other objects to be able to
+change the data, write a member function that the objects can call and make sure
+that the member function does validity checking. Then other member function that
+use the data won’t have to check for validity first.

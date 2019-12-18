@@ -37,3 +37,18 @@ catch(bad_alloc) {
 "In general (very roughly) exceptions are best for errors that you really can't continue on very well - you might recover but there is not a good way to finish the task that was asked. You can bypass all functions along the way and go back to one (or a few) places where you handle all bad errors. This can really clean up your code by separating the algorithm logic from the error logic." - Jeff Connelly.
 
 "Other than that, I use them depending on common use. If a function will usually succeed, I'll throw an exception when it fails. That way, all the client code doesn't have to keep looking at return codes and comparing them. If a failure needs to be propogated up and handled by something other than the original caller, I'll throw an exception. Otherwise, I use error codes."
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+Here’s an example that sooner or later will produce an exception. p.128
+try{
+for(;;)
+new char[10000];
+} catch(bad_alloc) {
+cerr << "No memory left";
+}
+
+
+A useful exception is out_of_range (header <stdexcept>), which is thrown by at() and by bitset<>::operator[]().
+Exception handling code can slow a program down even when no exceptions happen.
+The code size will also increase.
