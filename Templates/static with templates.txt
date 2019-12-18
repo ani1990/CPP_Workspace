@@ -1,0 +1,41 @@
+// ----- TEMPLATE CLASSES -----
+
+// Template classes are classes that can work with 
+// different data types
+
+// You can define that you may receive parameters
+// with different types, but they don't have to
+// be different
+template <typename T, typename U>
+class Person{  
+public:
+    T height;
+    U weight;
+    static int numOfPeople;
+    Person(T h, U w){
+        height = h, weight = w;
+        numOfPeople++;
+    }   
+    void GetData(){
+        std::cout << "Height : " <<
+            height << 
+            " and Weight : " <<
+            weight << "\n";
+    }
+};
+
+// You have to initialize static class members
+template<typename T, typename U> int Person<T, U>::numOfPeople;
+
+
+// ----- END OF TEMPLATE CLASSES -----
+
+int main()
+{
+    Animal spot = Animal();
+    spot.name = "Spot";
+    std::cout << "The Animal is named " << 
+            spot.name << "\n";
+}  
+
+    
