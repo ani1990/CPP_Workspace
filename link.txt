@@ -1,1 +1,4 @@
 https://digitaldefynd.com/best-c-plus-plus-tutorial-course-certification/
+
+Lot of code snippets and examples
+https://github.com/caveofprogramming/advanced-cplusplus
