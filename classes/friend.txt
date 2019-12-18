@@ -1,0 +1,23 @@
+Friend classes and functions
+
+It is sometimes useful to let the functions of one class have access to the components
+of another class without making the components public and without the overhead
+of having to call member functions to get private data.
+The following shows how one class (in this case Another) can let another class (in
+this case Base) be a “friend” class
+
+
+class Another { friend class Base; int value; ... }
+
+
+
+For the sake of clarity it’s a good idea to have the friend lines at the start of the
+class definition. Note that friendship is granted by the class being accessed, not
+claimed by the class wanting access.
+
+A friend may be a non-member function, a member function of another class, or an entire class. 
+
+Friends and derived classes differ in that derived classes might not be able to access all the members of the base class.
+
+
+

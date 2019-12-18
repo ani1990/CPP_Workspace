@@ -17,3 +17,16 @@ that they can be called by other objects). If you want other objects to be able 
 change the data, write a member function that the objects can call and make sure
 that the member function does validity checking. Then other member function that
 use the data won’t have to check for validity first.
+
+
+A private function is often called a helper or utility function because its for the
+benefit of other member functions. Note that a member function p.278
+
+1. can access private data
+2. is in scope of class
+3. must be invoked on an object
+
+If you have the choice of writing a friend or member function, choose a member
+function. p.280
+
+Note that structs have no private or protected parts.

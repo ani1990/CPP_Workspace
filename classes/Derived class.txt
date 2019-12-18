@@ -1,0 +1,50 @@
+3.5 Derived classes
+
+The more you use C++ the more you’ll be developing classes which require greater
+sophistication. Often you’ll need to add extra functionality to an existing class.
+C++ provides a mechanism to build new classes from old ones
+
+
+class More : public Base {
+int value;
+...
+};
+
+
+Here More inherits the members of Base.
+
+The public keyword means that the members of Base are as accessible to More as Base allows. By default derivation
+is private (which means that even Base’s public members can’t be accessed by
+More), but usually derivation should be public, privacy being control by the base class.
+
+
+
+When an object of type More is created, first the Base constructor is called, then More’s constructor. 
+When the object is destroyed, the destructors are called in reverse order. The constructors/destructors are not inherited, but you can say
+
+More::More(int sz):Base(sz){}
+
+passing arguments to a base member class constructor (or to a number of constructors using a comma-separated list).
+
+A derived class can be assigned to any of its public base classes, so the following is possible
+
+class More : public Base {
+int value;
+...
+};
+
+Base b;
+More m;
+b=m;
+
+
+It will fill the fields of b with the corresponding values in m. However, m=b isn’t possible.
+
+You can derive new classes from a derived class, and you can derive many different
+classes from a base class so you can develop a family tree of related classes.
+
+As we’ll see soon, the “parent” classes can keep parts of themselves private, not only to unrelated classes but to derived classes too.
+Big classes don’t necessarily imply big objects: all objects of a class share member functions, for instance.
+
+It’s possible for a class to be derived from 2 or more other classes. It’s called Multiple
+Inheritance but it introduces complications, so don’t use it unless you know what you’re doing.
