@@ -1,0 +1,23 @@
+https://www.coursera.org/learn/cs-fundamentals-2/home/welcome
+
+
+
+
+
+
+
+
+
+
+Compare Arrays vs Linked lists
+
+1.Stacks - O(1) vs O(1)
+2.Queues - O(1) vs O(1)
+
+
+
+Insert  in Array - O(n)
+Insert in Linkedlist - O(1)
+
+
+
